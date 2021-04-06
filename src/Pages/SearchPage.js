@@ -17,18 +17,11 @@ const SearchPage = (props) => {
 	const term=state.term
 	const {data}=SearchResult(term)
     const [inputText, setInputText] = useState('')
-	// // https://developers.googlecom/custom-search/v1/using_rest;
-// // https://www.googleapis.com customsearch/
-//console.log(data?.data?.items[0])
+
 const datas=data?.data
-console.log(datas)
 const resultTime=datas?.searchInformation.formattedSearchTime;
 const allResults=datas?.searchInformation?.formattedTotalResults;
 
-datas?.items?.map(item=>{
-	console.log(item.link)
-})
-//console.log(allResults)
 const submit=(e)=>{
 	e.preventDefault()
 	dispatch({
@@ -37,8 +30,6 @@ const submit=(e)=>{
 	})
 
 }
-	console.log(term)
-
 
   return (
     <SearchPageContainer>
@@ -72,32 +63,32 @@ const submit=(e)=>{
      <Contents>
      <SearchIcon style={{fontSize:"17px",
      color:"rgba(0,0,0,0.7)"}}/>
-     <a>All</a>
+     <a href="/">All</a>
      </Contents> 
       <Contents>
      <DescriptionIcon style={{fontSize:"17px",
      color:"rgba(0,0,0,0.7)"}}/>
-     <a>News</a>
+     <a href="/">News</a>
      </Contents>  
      <Contents>
      <ImageIcon style={{fontSize:"17px",
      color:"rgba(0,0,0,0.7)"}}/>
-     <a>images</a>
+     <a href="/">images</a>
      </Contents>  
      <Contents>
      <LocalOfferIcon style={{fontSize:"17px",
      color:"rgba(0,0,0,0.7)"}}/>
-     <a>shopping</a>
+     <a href="/">shopping</a>
      </Contents>  
      <Contents>
      <RoomIcon style={{fontSize:"17px",
      color:"rgba(0,0,0,0.7)"}}/>
-     <a>maps</a>
+     <a href="/">maps</a>
      </Contents>
      <Contents>
      <MoreVertIcon style={{fontSize:"17px",
      color:"rgba(0,0,0,0.7)"}}/>
-     <a>more</a>
+     <a href="/">more</a>
      </Contents>
      </AllItems>
      
@@ -111,7 +102,7 @@ const submit=(e)=>{
 	}
 	{datas?.items?.map(item=>(
 <AllResults>
-<h3>Title: {item.title}  </h3>
+<h3>{item.title}  </h3>
 <p>{item.snippet}</p>
 <a href={item.link}>{item.link}</a>
 </AllResults>
@@ -219,13 +210,7 @@ cursor:pointer;
 const AllItems=styled.div`
 display:flex;
 `
-const Settings=styled.div`
-display:flex;
-padding:0 5px;
-p{
-	padding:0 5px;
-}
-`
+
 const SearchResultsLinks=styled.div`
 
 h4{
@@ -250,6 +235,9 @@ margin-left:230px;
 	}
 	a{
 		color:blue;
+	}
+	p{
+		width:600px;
 	}
 @media only screen and (max-width:767px){
 	margin-left:158px;

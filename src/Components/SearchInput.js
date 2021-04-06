@@ -42,7 +42,7 @@ dispatch({
     </InputContainer>
     <Buttons>
     <button type="submit" onClick={search} > Google Search </button>
-    <button >Fozilov Otabek</button>
+    <button >I am feeling happy</button>
     </Buttons>
     </form>
   )

@@ -1,9 +1,10 @@
 {
   "name": "google-clon",
-    "homepage": "http://Otabek1990.github.io/Google-clone.git",
+  "homepage": "http://Otabek1990.github.io/Google-clone.git",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "-": "^0.0.1",
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^5.11.9",
@@ -14,11 +15,12 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "serve": "^11.3.2",
     "styled-components": "^5.2.3",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-      "predeploy": "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
